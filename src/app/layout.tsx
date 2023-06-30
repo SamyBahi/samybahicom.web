@@ -14,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={`bg-primary text-secondary ${inter.className}`}>
+      <body
+        className={` antialiased bg-primary text-secondary ${inter.className}`}
+      >
         <Providers>
           <header className="md:sticky top-0 z-20">
             <Navbar></Navbar>

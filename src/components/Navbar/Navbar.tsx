@@ -15,8 +15,8 @@ const items: { id: number; title: string; path: string }[] = [
 const Navbar = () => {
   return (
     <nav className="max-w-[1200px] mx-auto flex justify-between items-center p-2.5">
-      <Link href="/">
-        <SamyBahiLogo className=" text-4xl fill-secondary" />
+      <Link href="/" aria-label="back to homepage">
+        <SamyBahiLogo className="text-4xl fill-secondary" />
       </Link>
       <div className="flex items-center gap-1">
         <NavItems items={items} />
