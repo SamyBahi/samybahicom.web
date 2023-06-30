@@ -21,13 +21,7 @@ const Navbar = () => {
       <div className="flex items-center gap-1">
         <NavItems items={items} />
         <NavItemsMobile items={items} />
-        <div className="flex gap-5 items-center">
-          <div className="flex gap-2">
-            <GitHubLogo className="text-2xl fill-secondary opacity-75 hover:cursor-pointer hover:opacity-100 transition-opacity" />
-            <LinkedinLogo className="text-2xl fill-secondary opacity-75 hover:cursor-pointer hover:opacity-100 transition-opacity" />
-          </div>
-          <ThemeSwitcher />
-        </div>
+        <ThemeSwitcher />
       </div>
     </nav>
   );

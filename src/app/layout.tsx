@@ -3,6 +3,11 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./providers";
+import axios from "axios";
+axios.defaults.headers.common = {
+  Authorization: `Bearer ${process.env.API_KEY}`,
+};
+axios.defaults.baseURL = process.env.API_URL;
 
 const inter = Inter({ subsets: ["latin"] });
 

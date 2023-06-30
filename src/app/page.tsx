@@ -1,9 +1,11 @@
 import Hero from "@/components/Home/Hero";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="flex flex-col items-center justify-between p-24">
       <Hero />
     </main>
   );
-}
+};
+
+export default Home;
