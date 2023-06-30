@@ -35,7 +35,10 @@ const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
   return (
     <div className="relative">
       <Listbox value={theme} onChange={setTheme}>
-        <Listbox.Button className="px-4 py-2 rounded-md text-sm hover:cursor-pointer opacity-75">
+        <Listbox.Button
+          className="px-4 py-2 rounded-md text-sm hover:cursor-pointer opacity-75"
+          aria-label="theme switcher button"
+        >
           <SunIcon className="text-xl stroke-secondary opacity-75 hover:cursor-pointer" />
         </Listbox.Button>
         <Transition
