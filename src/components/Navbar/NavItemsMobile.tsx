@@ -19,7 +19,7 @@ const NavItemsMobile = ({ items }: NavItemsMobileProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <Popover.Panel className="absolute right-0 z-10 rounded-md bg-white shadow-lg md:hidden p-2 w-36">
+        <Popover.Panel className="absolute right-0 z-10 rounded-md bg-popover shadow-lg md:hidden p-2 w-36">
           <ul className="flex flex-col gap-2 ">
             {items.map((item: { id: number; title: string; path: string }) => (
               <NavItem key={item.id} path={item.path}>

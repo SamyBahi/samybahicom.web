@@ -11,16 +11,16 @@ const NavItem = ({ path, children }: NavItemProps) => {
   const pathname: string = usePathname();
 
   const isCurrentPage = pathname === path;
-  //hover:opacity-100 transition-opacity text-secondaryl opacity-75
+  //hover:opacity-100 transition-opacity text-secondary opacity-75
 
   return (
     <li>
       <Link
         href={path}
-        className={`block px-4 py-2 rounded-md text-sm hover:cursor-pointer${
+        className={`block px-4 py-2 rounded-md text-sm hover:cursor-pointer text-secondary ${
           isCurrentPage
-            ? "text-secondaryl bg-secondaryl bg-opacity-10"
-            : "hover:opacity-100 transition-opacity text-secondaryl opacity-75"
+            ? "bg-secondary bg-opacity-10"
+            : "opacity-75 hover:opacity-100 transition-opacity"
         } `}
       >
         {children}
