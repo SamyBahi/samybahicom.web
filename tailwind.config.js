@@ -9,10 +9,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryl: "#F2F2F7",
-        secondaryl: "#1C1C1E",
-        primaryd: "#1C1C1E",
-        secondaryd: "#F2F2F7",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+        popover: "rgb(var(--color-popover) / <alpha-value>)",
       },
     },
   },

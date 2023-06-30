@@ -1,26 +1,42 @@
 import { Transition, Listbox } from "@headlessui/react";
 import NavItem from "./NavItem";
 import { CheckIcon, SunIcon } from "../svgs";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 interface NavItemsMobileProps {
   items?: { title: string; path: string }[];
 }
 
 const options = [
-  { id: 1, name: "Automatic" },
-  { id: 2, name: "Light" },
-  { id: 3, name: "Dark" },
+  { id: 1, value: "system", name: "Automatic" },
+  { id: 2, value: "light", name: "Light" },
+  { id: 3, value: "dark", name: "Dark" },
 ];
 
 const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+    const currentTheme = localStorage.getItem("theme");
+
+    if (!currentTheme) {
+      localStorage.setItem("theme", "system");
+      return;
+    }
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="relative">
-      <Listbox value={selectedOption} onChange={setSelectedOption}>
-        <Listbox.Button className=" px-4 py-2 rounded-md text-sm hover:cursor-pointer opacity-75">
-          <SunIcon className="text-xl stroke-secondaryl opacity-75 hover:cursor-pointer" />
+      <Listbox value={theme} onChange={setTheme}>
+        <Listbox.Button className="px-4 py-2 rounded-md text-sm hover:cursor-pointer opacity-75">
+          <SunIcon className="text-xl stroke-secondary opacity-75 hover:cursor-pointer" />
         </Listbox.Button>
         <Transition
           enter="transition duration-100 ease-out"
@@ -30,13 +46,17 @@ const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <Listbox.Options className=" absolute right-0 z-10 rounded-md bg-white shadow-lg p-2 w-36">
+          <Listbox.Options className="absolute right-0 z-10 rounded-md bg-popover shadow-lg p-2 w-36">
             {options.map((option) => (
-              <Listbox.Option key={option.id} value={option} as={Fragment}>
+              <Listbox.Option
+                key={option.id}
+                value={option.value}
+                as={Fragment}
+              >
                 {({ selected }: { selected: boolean }) => (
                   <li
                     className={`px-4 py-2 rounded-md text-sm hover:cursor-pointer
-                     hover:bg-secondaryl hover:bg-opacity-10
+                     hover:bg-secondary hover:bg-opacity-10
                   `}
                   >
                     <div className="flex justify-between items-center">

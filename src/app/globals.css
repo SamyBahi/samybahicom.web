@@ -2,17 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    --color-primary: 242 242 247;
+    --color-secondary: 28 28 30;
+    --color-popover: 255 255 255;
+  }
+  [data-theme="dark"] body {
+    --color-primary: 28 28 30;
+    --color-secondary: 242 242 247;
+    --color-popover: 0 0 0;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: 28 28 30;
+    --color-secondary: 242 242 247;
+    --color-popover: 0 0 0;
+  }
+} */
+
 /* :root {
   --foreground-hex: #1c1c1e;
   --background-hex: #f2f2f7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-hex: #f2f2f7;
-    --background-hex: #1c1c1e;
-  }
-}
+
 
 body {
   color: rgb(var(--foreground-hex));
