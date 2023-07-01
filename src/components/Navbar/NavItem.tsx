@@ -17,7 +17,7 @@ const NavItem = ({ path, children }: NavItemProps) => {
     <li>
       <Link
         href={path}
-        className={`block px-4 py-2 rounded-md text-sm hover:cursor-pointer text-secondary ${
+        className={`block px-4 py-2 rounded-md hover:cursor-pointer text-secondary ${
           isCurrentPage
             ? "bg-secondary bg-opacity-10"
             : "opacity-75 hover:opacity-100 transition-opacity"

@@ -1,6 +1,6 @@
 import { Transition, Listbox } from "@headlessui/react";
 import NavItem from "./NavItem";
-import { CheckIcon, SunIcon } from "../svgs";
+import { CheckIcon, MoonIcon, SunIcon } from "../svgs";
 import { Fragment, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
@@ -16,7 +16,7 @@ const options = [
 
 const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -36,10 +36,21 @@ const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
     <div className="relative">
       <Listbox value={theme} onChange={setTheme}>
         <Listbox.Button
-          className="px-4 py-2 rounded-md text-sm hover:cursor-pointer opacity-75"
+          className="px-4 py-2 rounded-md hover:cursor-pointer opacity-75"
           aria-label="theme switcher button"
         >
-          <SunIcon className="text-xl stroke-secondary opacity-75 hover:cursor-pointer" />
+          {theme === "dark" && (
+            <MoonIcon className="text-lg fill-secondary opacity-75 hover:cursor-pointer" />
+          )}
+          {theme === "light" && (
+            <SunIcon className="text-xl stroke-secondary opacity-75 hover:cursor-pointer" />
+          )}
+          {theme === "system" && systemTheme === "dark" && (
+            <MoonIcon className="text-lg fill-secondary opacity-75 hover:cursor-pointer" />
+          )}
+          {theme === "system" && systemTheme === "light" && (
+            <SunIcon className="text-xl stroke-secondary opacity-75 hover:cursor-pointer" />
+          )}
         </Listbox.Button>
         <Transition
           enter="transition duration-100 ease-out"
@@ -58,7 +69,7 @@ const ThemeSwitcher = ({ items }: NavItemsMobileProps) => {
               >
                 {({ selected }: { selected: boolean }) => (
                   <li
-                    className={`px-4 py-2 rounded-md text-sm hover:cursor-pointer
+                    className={`px-4 py-2 rounded-md hover:cursor-pointer
                      hover:bg-secondary hover:bg-opacity-10
                   `}
                   >

@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  :root {
     --color-primary: 242 242 247;
     --color-secondary: 28 28 30;
     --color-popover: 255 255 255;
   }
-  [data-theme="dark"] body {
+  [data-theme="dark"] {
     --color-primary: 28 28 30;
     --color-secondary: 242 242 247;
     --color-popover: 0 0 0;
   }
+}
+.animate-in {
+  animation-delay: calc(var(--index) * 130ms);
 }
