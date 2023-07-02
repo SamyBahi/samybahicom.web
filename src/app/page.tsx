@@ -1,12 +1,13 @@
 import Expertise from "@/components/home/expertise/Expertise";
 import Hero from "@/components/home/hero/Hero";
+import MainContainer from "@/components/ui/MainContainer";
 
 const Home = () => {
   return (
-    <main className="flex flex-col items-center justify-between p-6 md:pt-24">
+    <MainContainer>
       <Hero />
       <Expertise />
-    </main>
+    </MainContainer>
   );
 };
 

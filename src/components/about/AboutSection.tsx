@@ -8,6 +8,7 @@ interface AboutSectionProps extends PropsWithChildren {
 const AboutSection = ({ title, style, children }: AboutSectionProps) => {
   return (
     <section
+      aria-label={title + "section"}
       className="max-w-[1200px] w-full flex flex-col md:flex-row gap-2 md:gap-2 lg:gap-9 col-reverse mt-14 animate-in"
       style={style}
     >

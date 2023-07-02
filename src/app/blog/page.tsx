@@ -1,7 +1,9 @@
+import MainContainer from "@/components/ui/MainContainer";
+
 export default function Blog() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>About Page !</h1>
-    </main>
+    <MainContainer>
+      <h1>No blog posts yet !</h1>
+    </MainContainer>
   );
 }

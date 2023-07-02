@@ -1,7 +1,37 @@
+import MainContainer from "@/components/ui/MainContainer";
+import PersonalProjects from "@/components/work/PersonalProjects/PersonalProjects";
+
+export type Project = {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    type: string;
+    githubLink: {
+      data: {
+        id: number;
+        attributes: {
+          url: string;
+        };
+      };
+    };
+    tags: {
+      data: [
+        {
+          id: number;
+          attributes: {
+            title: string;
+          };
+        }
+      ];
+    };
+  };
+};
+
 export default function Work() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Work Page !</h1>
-    </main>
+    <MainContainer>
+      <PersonalProjects />
+    </MainContainer>
   );
 }

@@ -11,6 +11,7 @@ const StyledLink = (props: buttonProps) => {
   return (
     <a
       href={url}
+      target="_blank"
       className="border border-secondary border-opacity-20 rounded-md flex items-center justify-between px-3 py-4 w-full hover:underline"
     >
       {children}

@@ -5,6 +5,7 @@ import Education from "@/components/about/education/Education";
 import Experience from "@/components/about/experience/Experience";
 import ExperienceList from "@/components/about/experience/ExperienceList";
 import AboutIntroduction from "@/components/about/introduction/AboutIntroduction";
+import MainContainer from "@/components/ui/MainContainer";
 
 export const metadata = {
   title: "About",
@@ -13,12 +14,12 @@ export const metadata = {
 
 export default async function About() {
   return (
-    <main className="flex flex-col items-center justify-between p-6 md:pt-24">
+    <MainContainer>
       <AboutTitle />
       <AboutIntroduction />
       <Experience />
       <Education />
       <Connect />
-    </main>
+    </MainContainer>
   );
 }
