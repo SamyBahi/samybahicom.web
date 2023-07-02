@@ -14,14 +14,14 @@ const ExpertiseItem = ({
   const linkOpacity = isActive ? "opacity-100" : "opacity-20";
 
   return (
-    <div
+    <li
       aria-label="expertise item"
       className={`w-80 h-28 hover:cursor-default transition-opacity ${linkOpacity} `}
       onMouseEnter={onMouseEnter}
     >
-      <h1 className="text-2xl font-bold">{title}</h1>
+      <h2 className="text-2xl font-bold">{title}</h2>
       <p className="mt-3">{description}</p>
-    </div>
+    </li>
   );
 };
 

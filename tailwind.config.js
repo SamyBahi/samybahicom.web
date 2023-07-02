@@ -27,8 +27,24 @@ module.exports = {
         in: "in .6s both",
         "in-reverse": "in-reverse .6s both",
       },
+      typography: ({ theme }) => ({
+        secondary: {
+          css: {
+            "--tw-prose-body": theme("colors.secondary"),
+            "--tw-prose-headings": theme("colors.secondary"),
+            "--tw-prose-lead": theme("colors.secondary"),
+            "--tw-prose-links": theme("colors.secondary"),
+            "--tw-prose-bold": theme("colors.secondary"),
+            "--tw-prose-counters": theme("colors.secondary"),
+            "--tw-prose-bullets": theme("colors.secondary"),
+            "--tw-prose-hr": theme("colors.secondary"),
+            "--tw-prose-quotes": theme("colors.secondary"),
+            "--tw-prose-quote-borders": theme("colors.secondary"),
+            "--tw-prose-captions": theme("colors.secondary"),
+          },
+        },
+      }),
     },
   },
-
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

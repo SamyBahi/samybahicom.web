@@ -18,7 +18,7 @@ const Expertise = async () => {
       className="max-w-[1200px] w-full mt-6 md:mt-32 animate-in"
       style={{ "--index": 2 } as React.CSSProperties}
     >
-      <h6 className="font-bold text-center lg:text-start">My expertise</h6>
+      <h1 className="font-bold">My expertise</h1>
       <ExpertiseList expertiseData={expertiseData} />
     </section>
   );

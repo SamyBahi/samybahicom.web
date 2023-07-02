@@ -30,12 +30,12 @@ const ExpertiseList = ({ expertiseData }: ExpertiseListProps) => {
   };
 
   return (
-    <div
+    <ul
       className="flex flex-wrap items-center justify-center  xl:justify-start w-full lg:gap-16 mt-8"
       onMouseLeave={handleMouseLeave}
     >
       {expertiseItems}
-    </div>
+    </ul>
   );
 };
 

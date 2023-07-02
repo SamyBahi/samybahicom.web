@@ -1,5 +1,5 @@
 import axios from "axios";
-import ConnectList from "./ConnectList";
+import ConnectList from "@/components/ui/ConnectList";
 
 type HomeHero = {
   id: number;
@@ -18,14 +18,16 @@ const Hero = async () => {
         {heroData.attributes.title}
       </h1>
       <div className="flex flex-col lg:flex-row my-6 gap-7 items-center animate-in">
-        <div className="h-52 w-52 bg-secondary rounded-lg"></div>
+        <div className="h-52 w-52 bg-secondary rounded-lg shrink-0"></div>
         <div>
           <p className="text-justify md:text-start max-w-[440px]">
             {heroData.attributes.speech}
           </p>
         </div>
       </div>
-      <ConnectList />
+      <div className="flex justify-center lg:justify-start">
+        <ConnectList />
+      </div>
     </section>
   );
 };
