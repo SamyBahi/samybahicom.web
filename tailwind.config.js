@@ -41,6 +41,7 @@ module.exports = {
             "--tw-prose-quotes": theme("colors.secondary"),
             "--tw-prose-quote-borders": theme("colors.secondary"),
             "--tw-prose-captions": theme("colors.secondary"),
+            "--tw-prose-pre-bg": theme("colors.neutral[900]"),
           },
         },
       }),

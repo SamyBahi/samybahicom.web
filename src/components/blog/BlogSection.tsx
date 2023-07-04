@@ -1,7 +1,7 @@
 import axios from "axios";
-import PostList from "./posts/PostList";
+import PostList from "./postsList/PostList";
 
-export type Post = {
+export type PostCard = {
   id: number;
   attributes: {
     title: string;
@@ -20,7 +20,7 @@ export type Post = {
 };
 
 const BlogSection = async () => {
-  const postsData: Post[] = await getPostsData();
+  const postsData: PostCard[] = await getPostsData();
 
   return (
     <section aria-label="Personal projects" className="max-w-[1200px] w-full">

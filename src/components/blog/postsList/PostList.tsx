@@ -1,10 +1,10 @@
 "use client";
 import PostItem from "./PostItem";
-import { Post } from "../BlogSection";
+import { PostCard } from "../BlogSection";
 import { useState } from "react";
 
 type PostListProps = {
-  postsData: Post[];
+  postsData: PostCard[];
 };
 
 const PostList = ({ postsData }: PostListProps) => {
@@ -20,7 +20,7 @@ const PostList = ({ postsData }: PostListProps) => {
 
   return (
     <ul onMouseLeave={handleMouseLeave}>
-      {postsData.map((postData: Post) => (
+      {postsData.map((postData: PostCard) => (
         <PostItem
           postData={postData}
           key={postData.id}

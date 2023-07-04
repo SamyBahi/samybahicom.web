@@ -1,9 +1,10 @@
 import { LinkIcon } from "@/components/svgs";
 import TagsList from "@/components/ui/TagsList";
-import { Post } from "../BlogSection";
+import { PostCard } from "../BlogSection";
+import Link from "next/link";
 
 type PostItemProps = {
-  postData: Post;
+  postData: PostCard;
   isActive: boolean;
   onMouseEnter: () => void;
 };
@@ -17,12 +18,15 @@ const PostItem = ({ postData, isActive, onMouseEnter }: PostItemProps) => {
     >
       <div className="flex flex-col justify-between">
         <div>
-          <a href="#" className="flex items-center space-x-4 hover:underline">
+          <Link
+            href={"/blog/" + postData.id}
+            className="flex items-center space-x-4 hover:underline"
+          >
             <h2 className="text-lg lg:text-2xl font-medium">
               {postData.attributes.title}
             </h2>
             <LinkIcon className="opacity-50" />
-          </a>
+          </Link>
           <p className="mt-3 opacity-50">{postData.attributes.description}</p>
         </div>
         <div>
