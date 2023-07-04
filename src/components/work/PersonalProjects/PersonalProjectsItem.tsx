@@ -16,7 +16,7 @@ const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
         <div className="w-full lg:w-1/3 aspect-video bg-secondary rounded shrink-0"></div>
         <div>
           <div className="display flex justify-between">
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-lg md:text-2xl font-bold">
               {projectData.attributes.title}
             </h2>
             <LinkIcon className="opacity-50" />
@@ -24,7 +24,7 @@ const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
           <p className="opacity-50">{projectData.attributes.description}</p>
         </div>
       </a>
-      <div className="border-t border-secondary border-opacity-20 flex justify-between items-center py-1 px-5 text-[#fcfcfc]">
+      <div className="border-t border-secondary border-opacity-20 flex justify-between items-center py-1 px-5 ">
         <TagsList tags={projectData.attributes.tags.data} />
         <div>
           <a

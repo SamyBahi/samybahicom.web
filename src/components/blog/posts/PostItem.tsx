@@ -4,15 +4,21 @@ import { Post } from "../BlogSection";
 
 type PostItemProps = {
   postData: Post;
+  isActive: boolean;
+  onMouseEnter: () => void;
 };
 
-const PostItem = ({ postData }: PostItemProps) => {
+const PostItem = ({ postData, isActive, onMouseEnter }: PostItemProps) => {
+  const linkOpacity = isActive ? "opacity-100" : "opacity-20";
   return (
-    <li className="flex justify-between">
+    <li
+      className={`flex justify-between transition-opacity mt-12 ${linkOpacity}`}
+      onMouseEnter={onMouseEnter}
+    >
       <div className="flex flex-col justify-between">
         <div>
           <a href="#" className="flex items-center space-x-4 hover:underline">
-            <h2 className=" lg:text-2xl font-medium">
+            <h2 className="text-lg lg:text-2xl font-medium">
               {postData.attributes.title}
             </h2>
             <LinkIcon className="opacity-50" />
