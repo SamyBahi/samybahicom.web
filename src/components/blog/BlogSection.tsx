@@ -44,7 +44,11 @@ const getPostsData = async () => {
 
     return res.data.data;
   } catch (error) {
-    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error("Error " + error.response?.status);
+    } else {
+      throw new Error("Unexpected Error");
+    }
   }
 };
 

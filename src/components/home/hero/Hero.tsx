@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import ConnectList from "@/components/ui/ConnectList";
 
 type HomeHero = {
@@ -38,7 +38,11 @@ const getHero = async () => {
 
     return res.data.data;
   } catch (error) {
-    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error("Error " + error.response?.status);
+    } else {
+      throw new Error("Unexpected Error");
+    }
   }
 };
 

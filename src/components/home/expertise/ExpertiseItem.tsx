@@ -16,7 +16,7 @@ const ExpertiseItem = ({
   return (
     <li
       aria-label="expertise item"
-      className={`w-80 h-28 hover:cursor-default transition-opacity ${linkOpacity} `}
+      className={`w-80 h-32 hover:cursor-default transition-opacity ${linkOpacity} `}
       onMouseEnter={onMouseEnter}
     >
       <h2 className="text-2xl font-bold">{title}</h2>

@@ -26,11 +26,15 @@ const Expertise = async () => {
 
 const getExpertise = async () => {
   try {
-    const res = await axios.get("/expertises");
+    const res = await axios.get("/expertises?sort[0]=id");
 
     return res.data.data;
   } catch (error) {
-    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error("Error " + error.response?.status);
+    } else {
+      throw new Error("Unexpected Error");
+    }
   }
 };
 

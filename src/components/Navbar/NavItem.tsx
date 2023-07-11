@@ -10,8 +10,8 @@ interface NavItemProps extends PropsWithChildren {
 const NavItem = ({ path, children }: NavItemProps) => {
   const pathname: string = usePathname();
 
-  const isCurrentPage = pathname === path;
-  //hover:opacity-100 transition-opacity text-secondary opacity-75
+  const isCurrentPage =
+    pathname === path || (path.includes("blog") && pathname.includes(path));
 
   return (
     <li>
