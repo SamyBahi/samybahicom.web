@@ -1,5 +1,6 @@
 import MainContainer from "@/components/ui/MainContainer";
 import PersonalProjects from "@/components/work/PersonalProjects/PersonalProjects";
+import { strapiImage } from "../layout";
 
 export type Project = {
   id: number;
@@ -25,6 +26,7 @@ export type Project = {
         }
       ];
     };
+    thumbnail: strapiImage;
   };
 };
 

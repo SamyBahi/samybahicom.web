@@ -1,4 +1,6 @@
+import { strapiImage } from "@/app/layout";
 import axios from "axios";
+import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export type Post = {
@@ -17,6 +19,7 @@ export type Post = {
         }
       ];
     };
+    thumbnail: strapiImage;
   };
 };
 
@@ -38,11 +41,22 @@ const PostContent = async ({ postId }: PostContentProps) => {
         </p>
       </div>
       <div
-        className="w-full aspect-video bg-secondary rounded mt-10 animate-in"
+        className="w-full aspect-video rounded-lg mt-10 relative overflow-hidden animate-in"
         style={{ "--index": 1 } as React.CSSProperties}
-      ></div>
+      >
+        <Image
+          src={
+            process.env.NEXT_PUBLIC_API_URL +
+            postData.attributes.thumbnail.data.attributes.formats.medium.url
+          }
+          alt="project thumbnail"
+          fill
+          sizes="100%"
+          priority
+        />
+      </div>
       <div
-        className="prose prose-secondary prose-p:opacity-60 prose-p:font-medium prose-h2:text-xl md:prose-h2:text-2xl mt-10 animate-in"
+        className="prose prose-secondary prose-p:text-secondary prose-p:text-opacity-60 prose-p:font-medium prose-img:rounded-lg prose-h2:text-xl md:prose-h2:text-2xl mt-10 animate-in"
         style={{ "--index": 2 } as React.CSSProperties}
       >
         <ReactMarkdown>{postData.attributes.content}</ReactMarkdown>
@@ -54,7 +68,7 @@ const PostContent = async ({ postId }: PostContentProps) => {
 const getPostData = async (postId: string) => {
   try {
     const res = await axios.get(
-      `/blog-posts/${postId}?populate[tags][fields]=title&fields[0]=title&fields[1]=description&fields[2]=content`
+      `/blog-posts/${postId}?populate[tags][fields]=title&populate=thumbnail&fields[0]=title&fields[1]=description&fields[2]=content`
     );
 
     return res.data.data;

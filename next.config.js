@@ -8,6 +8,15 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: process.env.IMG_HOST,
+        pathname: process.env.IMG_PATH + "/**",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

@@ -2,6 +2,7 @@ import { LinkIcon } from "@/components/svgs";
 import TagsList from "@/components/ui/TagsList";
 import { PostCard } from "../BlogSection";
 import Link from "next/link";
+import Image from "next/image";
 
 type PostItemProps = {
   postData: PostCard;
@@ -33,7 +34,18 @@ const PostItem = ({ postData, isActive, onMouseEnter }: PostItemProps) => {
           <TagsList tags={postData.attributes.tags.data} />
         </div>
       </div>
-      <div className="w-1/3 md:w-1/4 lg:w-1/5 aspect-video bg-secondary rounded shrink-0"></div>
+      <div className="w-1/3 md:w-1/4 lg:w-1/5 aspect-video rounded-md shrink-0 relative overflow-hidden">
+        <Image
+          src={
+            process.env.NEXT_PUBLIC_API_URL +
+            postData.attributes.thumbnail.data.attributes.formats.medium.url
+          }
+          alt="project thumbnail"
+          fill
+          sizes="100%"
+          priority
+        />
+      </div>
     </li>
   );
 };

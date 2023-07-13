@@ -1,5 +1,6 @@
 import axios from "axios";
 import PostList from "./postsList/PostList";
+import { strapiImage } from "@/app/layout";
 
 export type PostCard = {
   id: number;
@@ -16,6 +17,7 @@ export type PostCard = {
         }
       ];
     };
+    thumbnail: strapiImage;
   };
 };
 
@@ -39,7 +41,7 @@ const BlogSection = async () => {
 const getPostsData = async () => {
   try {
     const res = await axios.get(
-      "/blog-posts?populate[tags][fields]=title&fields[0]=title&fields[1]=description"
+      "/blog-posts?populate[tags][fields]=title&populate=thumbnail&fields[0]=title&fields[1]=description"
     );
 
     return res.data.data;

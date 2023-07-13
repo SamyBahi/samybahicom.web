@@ -7,9 +7,29 @@ import axios from "axios";
 axios.defaults.headers.common = {
   Authorization: `Bearer ${process.env.API_KEY}`,
 };
-axios.defaults.baseURL = process.env.API_URL;
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL + "/api";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export type strapiImage = {
+  data: {
+    id: number;
+    attributes: {
+      url: string;
+      formats: {
+        small: {
+          url: string;
+        };
+        medium: {
+          url: string;
+        };
+        thumbnail: {
+          url: string;
+        };
+      };
+    };
+  };
+};
 
 export const metadata = {
   title: "Samy Bahi",

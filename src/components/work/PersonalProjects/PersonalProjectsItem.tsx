@@ -1,6 +1,7 @@
 import { Project } from "@/app/work/page";
 import { GitHubLogo, LinkIcon } from "../../svgs";
 import TagsList from "@/components/ui/TagsList";
+import Image from "next/image";
 
 type PersonalProjectsItemProps = {
   projectData: Project;
@@ -8,14 +9,29 @@ type PersonalProjectsItemProps = {
 
 const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
   return (
-    <li>
+    <li
+      className="lg:w-[900px] border rounded-md  flex flex-col border-opacity-20 border-secondary mt-10 animate-in"
+      style={{ "--index": 1 } as React.CSSProperties}
+    >
       <a
         href="#"
         className="flex flex-col space-y-6 lg:flex-row p-3 lg:space-x-6 lg:space-y-0"
       >
-        <div className="w-full lg:w-1/3 aspect-video bg-secondary rounded shrink-0"></div>
-        <div>
-          <div className="display flex justify-between">
+        <div className="w-full lg:w-1/3 aspect-video rounded shrink-0 relative overflow-hidden">
+          <Image
+            src={
+              process.env.NEXT_PUBLIC_API_URL +
+              projectData.attributes.thumbnail.data.attributes.formats.medium
+                .url
+            }
+            alt="project thumbnail"
+            fill
+            sizes="100%"
+            priority
+          />
+        </div>
+        <div className="w-full">
+          <div className="display flex justify-between items-center lg:items-start">
             <h2 className="text-lg md:text-2xl font-bold">
               {projectData.attributes.title}
             </h2>

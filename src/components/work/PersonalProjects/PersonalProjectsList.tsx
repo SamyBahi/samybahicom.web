@@ -7,10 +7,7 @@ type PersonalProjectsListProps = {
 
 const PersonalProjectsList = ({ projectsData }: PersonalProjectsListProps) => {
   return (
-    <ul
-      className="lg:w-[900px] border rounded-md  flex flex-col border-opacity-20 border-secondary mt-10 animate-in"
-      style={{ "--index": 1 } as React.CSSProperties}
-    >
+    <ul>
       {projectsData.map((project) => (
         <PersonalProjectsItem projectData={project} key={project.id} />
       ))}

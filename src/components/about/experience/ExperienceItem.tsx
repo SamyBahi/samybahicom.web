@@ -1,5 +1,5 @@
-import { LinkIcon } from "@/components/svgs";
 import { Experience } from "./Experience";
+import Image from "next/image";
 
 type ExperienceItemProps = {
   experience: Experience;
@@ -23,7 +23,18 @@ const ExperienceItem = ({
         target="_blank"
         className="flex space-x-5 w-full p-2"
       >
-        <div className=" h-14 w-14 bg-secondary rounded-md shrink-0"></div>
+        <div className="relative h-14 w-14 rounded-md shrink-0 overflow-hidden">
+          <Image
+            src={
+              process.env.NEXT_PUBLIC_API_URL +
+              experience.attributes.image.data.attributes.url
+            }
+            alt="company logo"
+            fill
+            sizes="100%"
+            priority
+          />
+        </div>
         <div className="flex justify-between w-full">
           <div className="flex flex-col justify-between">
             <h3 className="font-medium">{experience.attributes.title}</h3>

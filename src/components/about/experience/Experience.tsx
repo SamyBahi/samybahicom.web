@@ -1,6 +1,7 @@
 import axios from "axios";
 import AboutSection from "../AboutSection";
 import ExperienceList from "./ExperienceList";
+import { strapiImage } from "@/app/layout";
 
 export type Experience = {
   id: number;
@@ -16,6 +17,7 @@ export type Experience = {
         };
       };
     };
+    image: strapiImage;
   };
 };
 
@@ -34,7 +36,9 @@ const Experience = async () => {
 
 const getExperienceData = async () => {
   try {
-    const res = await axios.get("/experiences?populate=link");
+    const res = await axios.get(
+      "/experiences?populate[0]=link&populate[1]=image"
+    );
 
     return res.data.data;
   } catch (error) {
