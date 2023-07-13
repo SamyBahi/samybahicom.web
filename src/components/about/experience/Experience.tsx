@@ -10,7 +10,7 @@ export type Experience = {
     company: string;
     period: string;
     link: {
-      data: {
+      data?: {
         id: number;
         attributes: {
           url: string;

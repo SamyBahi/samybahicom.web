@@ -18,7 +18,7 @@ const PersonalProjects = async () => {
 const getProjectsData = async () => {
   try {
     const res = await axios.get(
-      "/works?populate[githubLink][fields][0]=url&populate[tags][fields][0]=title&populate=thumbnail&filters[type]=personal&fields[0]=title&fields[1]=description"
+      "/works?populate[githubLink][fields][0]=url&populate[tags][fields][0]=title&populate=thumbnail&populate[appLink][fields][0]=url&filters[type]=personal&fields[0]=title&fields[1]=description"
     );
     return res.data.data;
   } catch (error) {

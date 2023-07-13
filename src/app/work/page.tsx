@@ -9,7 +9,15 @@ export type Project = {
     description: string;
     type: string;
     githubLink: {
-      data: {
+      data?: {
+        id: number;
+        attributes: {
+          url: string;
+        };
+      };
+    };
+    appLink: {
+      data?: {
         id: number;
         attributes: {
           url: string;
@@ -17,7 +25,7 @@ export type Project = {
       };
     };
     tags: {
-      data: [
+      data?: [
         {
           id: number;
           attributes: {

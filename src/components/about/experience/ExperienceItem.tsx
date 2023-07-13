@@ -19,7 +19,7 @@ const ExperienceItem = ({
       onMouseEnter={onMouseEnter}
     >
       <a
-        href={experience.attributes.link.data.attributes.url}
+        href={experience.attributes.link.data?.attributes.url || "#"}
         target="_blank"
         className="flex space-x-5 w-full p-2"
       >
