@@ -21,6 +21,7 @@ const ExperienceItem = ({
       <a
         href={experience.attributes.link.data?.attributes.url || "#"}
         target="_blank"
+        rel="noreferrer"
         className="flex space-x-5 w-full p-2"
       >
         <div className="relative h-14 w-14 rounded-md shrink-0 overflow-hidden">

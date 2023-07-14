@@ -15,6 +15,8 @@ const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
     >
       <a
         href={projectData.attributes.appLink.data?.attributes.url || "#"}
+        target="_blank"
+        rel="noreferrer"
         className="flex flex-col space-y-6 lg:flex-row p-3 lg:space-x-6 lg:space-y-0"
       >
         <div className="w-full lg:w-1/3 aspect-video rounded shrink-0 relative overflow-hidden">
@@ -48,6 +50,7 @@ const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
           <a
             href={projectData.attributes.githubLink.data?.attributes.url || "#"}
             target="_blank"
+            rel="noreferrer"
             className="text-xl"
             aria-label="github link"
           >

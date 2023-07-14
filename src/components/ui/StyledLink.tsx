@@ -12,6 +12,7 @@ const StyledLink = (props: buttonProps) => {
     <a
       href={url}
       target="_blank"
+      rel="noreferrer"
       className="border border-secondary border-opacity-20 rounded-md flex items-center justify-between px-3 py-4 w-full hover:underline"
     >
       {children}
