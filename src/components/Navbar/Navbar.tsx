@@ -1,6 +1,7 @@
 "use client";
+
 import Link from "next/link";
-import { GitHubLogo, LinkedinLogo, SamyBahiLogo, SunIcon } from "../svgs";
+import { SamyBahiLogo } from "../svgs";
 import NavItems from "./NavItems";
 import NavItemsMobile from "./NavItemsMobile";
 import ThemeSwitcher from "./ThemeSwitcher";
