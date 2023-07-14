@@ -2,6 +2,12 @@ import MainContainer from "@/components/ui/MainContainer";
 import PersonalProjects from "@/components/work/PersonalProjects/PersonalProjects";
 import { strapiImage } from "../layout";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Learn more about my work by testing my apps and reading my code.",
+};
+
 export type Project = {
   id: number;
   attributes: {

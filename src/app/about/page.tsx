@@ -9,7 +9,8 @@ import MainContainer from "@/components/ui/MainContainer";
 
 export const metadata = {
   title: "About",
-  description: "Learn more about Samy",
+  description:
+    "Learn more about Samy Bahi, A Software & Machine Learning engineer.",
 };
 
 export default async function About() {
