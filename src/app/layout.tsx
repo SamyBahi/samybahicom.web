@@ -1,7 +1,7 @@
+import Navbar from "../components/navbar/Navbar";
 import { PropsWithChildren } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "../components/navbar/Navbar";
 import Providers from "./providers";
 import axios from "axios";
 axios.defaults.headers.common = {
