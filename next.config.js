@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
+        protocol: "https",
         hostname: process.env.IMG_HOST,
         pathname: process.env.IMG_PATH + "/**",
       },

@@ -27,7 +27,7 @@ const ExperienceItem = ({
           <Image
             src={
               process.env.NEXT_PUBLIC_API_URL +
-              experience.attributes.image.data.attributes.url
+              experience.attributes.image.data.attributes.formats.thumbnail.url
             }
             alt="company logo"
             fill
