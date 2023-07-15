@@ -37,7 +37,7 @@ const Experience = async () => {
 const getExperienceData = async () => {
   try {
     const res = await axios.get(
-      "/experiences?populate[0]=link&populate[1]=image"
+      "/experiences?populate[0]=link&populate[1]=image&sort[0]=id"
     );
 
     return res.data.data;
