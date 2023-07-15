@@ -1,5 +1,6 @@
 import axios from "axios";
 import ExpertiseList from "./ExpertiseList";
+export const revalidate = 10;
 
 export type HomeExpertise = {
   id: number;

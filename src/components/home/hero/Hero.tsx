@@ -2,6 +2,7 @@ import axios from "axios";
 import ConnectList from "@/components/ui/ConnectList";
 import Image from "next/image";
 import { strapiImage } from "@/app/layout";
+export const revalidate = 10;
 
 type HomeHero = {
   id: number;
