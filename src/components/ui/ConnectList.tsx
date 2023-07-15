@@ -27,7 +27,7 @@ const ConnectList = async () => {
         className="w-48 animate-in"
         style={{ "--index": 1 } as React.CSSProperties}
       >
-        <StyledLink url="mailto:samy.bahi.perso@gmail.com">
+        <StyledLink url="mailto:contact@samybahi.com">
           <div className="flex gap-2 items-center">
             <EmailIcon className="text-2xl fill-secondary" />
             Contact me

@@ -8,7 +8,7 @@ interface NavItemsMobileProps {
 const NavItemsMobile = ({ items }: NavItemsMobileProps) => {
   return (
     <Popover className="relative">
-      <Popover.Button className="md:hidden px-4 py-2 rounded-md hover:cursor-pointer opacity-75">
+      <Popover.Button className="md:hidden px-4 py-2 rounded-md hover:cursor-pointer opacity-75 focus:outline-none">
         Menu <span className="text-xl">+</span>
       </Popover.Button>
       <Transition
