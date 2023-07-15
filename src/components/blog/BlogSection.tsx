@@ -1,6 +1,7 @@
 import axios from "axios";
 import PostList from "./postsList/PostList";
 import { strapiImage } from "@/app/layout";
+import Empty from "../ui/Empty";
 
 export type PostCard = {
   id: number;
@@ -24,6 +25,8 @@ export type PostCard = {
 const BlogSection = async () => {
   const postsData: PostCard[] = await getPostsData();
 
+  console.log(postsData);
+
   return (
     <section aria-label="Personal projects" className="max-w-[1200px] w-full">
       <h1 className="text-3xl font-bold animate-in">Blog</h1>
@@ -32,7 +35,8 @@ const BlogSection = async () => {
         className="mt-10 animate-in"
         style={{ "--index": 1 } as React.CSSProperties}
       >
-        <PostList postsData={postsData} />
+        {postsData.length !== 0 && <PostList postsData={postsData} />}
+        {postsData.length === 0 && <Empty />}
       </div>
     </section>
   );

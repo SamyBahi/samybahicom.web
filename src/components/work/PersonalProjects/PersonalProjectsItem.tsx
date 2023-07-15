@@ -9,10 +9,7 @@ type PersonalProjectsItemProps = {
 
 const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
   return (
-    <li
-      className="lg:w-[900px] border rounded-md  flex flex-col border-opacity-20 border-secondary mt-10 animate-in"
-      style={{ "--index": 1 } as React.CSSProperties}
-    >
+    <li className="lg:w-[900px] border rounded-md flex flex-col border-opacity-20 border-secondary space-y-10">
       <a
         href={projectData.attributes.appLink.data?.attributes.url || "#"}
         target="_blank"

@@ -1,6 +1,7 @@
 import axios from "axios";
 import PersonalProjectsList from "./PersonalProjectsList";
 import { Project } from "@/app/work/page";
+import Empty from "@/components/ui/Empty";
 
 const PersonalProjects = async () => {
   const projectsData: Project[] = await getProjectsData();
@@ -10,7 +11,15 @@ const PersonalProjects = async () => {
       <h1 className="text-xl md:text-3xl font-bold animate-in">
         Personal projects
       </h1>
-      <PersonalProjectsList projectsData={projectsData} />
+      <div
+        className="mt-10 animate-in"
+        style={{ "--index": 1 } as React.CSSProperties}
+      >
+        {projectsData.length !== 0 && (
+          <PersonalProjectsList projectsData={projectsData} />
+        )}
+        {projectsData.length === 0 && <Empty />}
+      </div>
     </section>
   );
 };
