@@ -8,7 +8,7 @@ import AboutIntroduction from "@/components/about/introduction/AboutIntroduction
 import MainContainer from "@/components/ui/MainContainer";
 
 export const metadata = {
-  title: "About",
+  title: "About | Samy Bahi",
   description:
     "Learn more about Samy Bahi, A Software & Machine Learning engineer.",
 };

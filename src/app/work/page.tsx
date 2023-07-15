@@ -3,7 +3,7 @@ import PersonalProjects from "@/components/work/PersonalProjects/PersonalProject
 import { strapiImage } from "../layout";
 
 export const metadata = {
-  title: "About",
+  title: "Work | Samy Bahi",
   description:
     "Learn more about my work by testing my apps and reading my code.",
 };
