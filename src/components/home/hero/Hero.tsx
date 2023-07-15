@@ -25,11 +25,11 @@ const Hero = async () => {
           <Image
             src={
               process.env.NEXT_PUBLIC_API_URL +
-              heroData.attributes.image.data.attributes.url
+              heroData.attributes.image.data.attributes.formats.small.url
             }
             alt="profile picture"
             fill
-            sizes="101%"
+            sizes="100%"
             priority
           />
         </div>
