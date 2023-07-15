@@ -1,7 +1,7 @@
 This is the frontend part of my portfolio website [samybahi.com](https://www.samybahi.com/).
 It is coupled with a strapi backend that you can find [here](https://github.com/SamyBahi/samybahicom.api).
 
-## Getting Started
+## 🚀 Getting Started
 
 - install packages :
 ```bash
