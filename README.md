@@ -3,7 +3,7 @@ It is coupled with a strapi backend that you can find [here](https://github.com/
 
 ## Getting Started
 
-install packages :
+- install packages :
 ```bash
 npm install
 ```
@@ -15,7 +15,7 @@ npm install
   - IMG_HOST : the hostname of your strapi backend (here for nextjs/image)
   - IMG_PATH : the path to the uploads of your strapi backend (here for nextjs/image again)
 
-start the development server :
+- start the development server :
 ```bash
 npm run dev
 ```
