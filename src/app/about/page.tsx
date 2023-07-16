@@ -1,11 +1,11 @@
-import AboutSection from "@/components/about/AboutSection";
 import AboutTitle from "@/components/about/AboutTitle";
 import Connect from "@/components/about/connect/Connect";
 import Education from "@/components/about/education/Education";
 import Experience from "@/components/about/experience/Experience";
-import ExperienceList from "@/components/about/experience/ExperienceList";
 import AboutIntroduction from "@/components/about/introduction/AboutIntroduction";
 import MainContainer from "@/components/ui/MainContainer";
+
+export const revalidate = 1800;
 
 export const metadata = {
   title: "About | Samy Bahi",

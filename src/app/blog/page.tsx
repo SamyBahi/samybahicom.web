@@ -1,6 +1,8 @@
 import BlogSection from "@/components/blog/BlogSection";
 import MainContainer from "@/components/ui/MainContainer";
 
+export const revalidate = 600;
+
 export const metadata = {
   title: "Blog | Samy Bahi",
   description:

@@ -2,6 +2,8 @@ import MainContainer from "@/components/ui/MainContainer";
 import PersonalProjects from "@/components/work/PersonalProjects/PersonalProjects";
 import { strapiImage } from "../layout";
 
+export const revalidate = 900;
+
 export const metadata = {
   title: "Work | Samy Bahi",
   description:

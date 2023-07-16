@@ -1,7 +1,7 @@
 import Expertise from "@/components/home/expertise/Expertise";
 import Hero from "@/components/home/hero/Hero";
 import MainContainer from "@/components/ui/MainContainer";
-export const revalidate = 10;
+export const revalidate = 1800;
 
 const Home = () => {
   return (
