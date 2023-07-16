@@ -2,7 +2,6 @@ import axios from "axios";
 import ConnectList from "@/components/ui/ConnectList";
 import Image from "next/image";
 import { strapiImage } from "@/app/layout";
-export const revalidate = 10;
 
 type HomeHero = {
   id: number;
@@ -49,21 +48,19 @@ const Hero = async () => {
 
 const getHero = async () => {
   try {
-    //const res = await axios.get("/home-hero?populate=image");
-
-    const res = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + "/api/home-hero?populate=image",
-      {
-        next: { revalidate: 10 },
-        headers: {
-          Authorization: `Bearer ${process.env.API_KEY}`,
-        },
-      }
-    );
-
-    const data = await res.json();
-
-    return data.data;
+    const res = await axios.get("/home-hero?populate=image");
+    // const res = await fetch(
+    //   process.env.NEXT_PUBLIC_API_URL + "/api/home-hero?populate=image",
+    //   {
+    //     next: { revalidate: 10 },
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.API_KEY}`,
+    //     },
+    //   }
+    // );
+    // const data = await res.json();
+    // return data.data;
+    return res.data.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error("Error " + error.response?.status);

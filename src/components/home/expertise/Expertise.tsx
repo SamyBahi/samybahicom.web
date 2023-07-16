@@ -1,6 +1,5 @@
 import axios from "axios";
 import ExpertiseList from "./ExpertiseList";
-export const revalidate = 10;
 
 export type HomeExpertise = {
   id: number;
@@ -27,20 +26,19 @@ const Expertise = async () => {
 
 const getExpertise = async () => {
   try {
-    // const res = await axios.get("/expertises?sort[0]=id");
-    const res = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + "/api/expertises?sort[0]=id",
-      {
-        next: { revalidate: 10 },
-        headers: {
-          Authorization: `Bearer ${process.env.API_KEY}`,
-        },
-      }
-    );
-
-    const data = await res.json();
-
-    return data.data;
+    const res = await axios.get("/expertises?sort[0]=id");
+    // const res = await fetch(
+    //   process.env.NEXT_PUBLIC_API_URL + "/api/expertises?sort[0]=id",
+    //   {
+    //     next: { revalidate: 10 },
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.API_KEY}`,
+    //     },
+    //   }
+    // );
+    // const data = await res.json();
+    // return data.data;
+    return res.data.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error("Error " + error.response?.status);
