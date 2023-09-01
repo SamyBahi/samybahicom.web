@@ -9,20 +9,27 @@ type PersonalProjectsItemProps = {
 
 const PersonalProjectsItem = ({ projectData }: PersonalProjectsItemProps) => {
   return (
-    <li className="lg:w-[900px] border rounded-md flex flex-col border-opacity-20 border-secondary space-y-10">
+    <li className="lg:w-[900px] border rounded-md flex flex-col border-opacity-20 border-secondary">
       <div className="flex flex-col space-y-6 lg:flex-row p-3 lg:space-x-6 lg:space-y-0">
         <div className="w-full lg:w-1/3 aspect-video rounded shrink-0 relative overflow-hidden">
-          <Image
-            src={
-              process.env.NEXT_PUBLIC_API_URL +
-              projectData.attributes.thumbnail.data.attributes.formats.medium
-                .url
-            }
-            alt="project thumbnail"
-            fill
-            sizes="100%"
-            priority
-          />
+          <a
+            href={projectData.attributes.appLink.data?.attributes.url || "#"}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:underline"
+          >
+            <Image
+              src={
+                process.env.NEXT_PUBLIC_API_URL +
+                projectData.attributes.thumbnail.data.attributes.formats.medium
+                  .url
+              }
+              alt="project thumbnail"
+              fill
+              sizes="100%"
+              priority
+            />
+          </a>
         </div>
         <div className="w-full">
           <div className="display flex justify-between items-center lg:items-start">

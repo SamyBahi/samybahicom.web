@@ -7,7 +7,7 @@ type PersonalProjectsListProps = {
 
 const PersonalProjectsList = ({ projectsData }: PersonalProjectsListProps) => {
   return (
-    <ul>
+    <ul className="space-y-6">
       {projectsData.map((project) => (
         <PersonalProjectsItem projectData={project} key={project.id} />
       ))}
